@@ -1,31 +1,16 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
-import calculateSteps from './calculateSteps';
+import './Results.css';
 
-export default function Results({
-  roomDimensions,
-  initialRoombaLocation,
-  dirtLocations,
-  drivingInstructions,
-}) {
-  const [steps, stats] = calculateSteps(roomDimensions, initialRoombaLocation, dirtLocations, drivingInstructions);
+import StepsTable from '../StepsTable';
+import Stats from '../Stats'
 
+export default function Results({ steps, stats }) {
   return (
-    <div>Results</div>
+    <div className="results">
+      <h1>Results</h1>
+      <StepsTable steps={steps} />
+      <Stats {...stats} />
+    </div>
   );
 }
-
-Results.propTypes = {
-  roomDimensions: PropTypes.arrayOf(PropTypes.number).isRequired,
-  initialRoombaLocation: PropTypes.arrayOf(PropTypes.number).isRequired,
-  dirtLocations: PropTypes.arrayOf(PropTypes.array).isRequired,
-  drivingInstructions: PropTypes.arrayOf(PropTypes.string).isRequired,
-};
-
-Results.defaultProps = {
-  roomDimensions: [],
-  initialRoombaLocation: [],
-  dirtLocations: [],
-  drivingInstructions: [],
-};

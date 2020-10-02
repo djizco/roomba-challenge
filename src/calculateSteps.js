@@ -32,12 +32,12 @@ function checkForWall(location, dimensions) {
   return false;
 }
 
-export default function calculateSteps(
+export default function calculateSteps({
   roomDimensions,
   initialRoombaLocation,
   dirtLocations,
   drivingInstructions,
-) {
+}) {
   let dirtCollected = 0;
   let totalWallsHit = 0;
   let remainingDirtLocations = dirtLocations;
@@ -101,5 +101,5 @@ export default function calculateSteps(
     totalWallsHit,
   };
 
-  return [steps, stats];
+  return { steps, stats };
 }
