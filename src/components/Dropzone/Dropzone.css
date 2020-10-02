@@ -1,0 +1,11 @@
+.dropzone {
+  border: 1px solid black;
+  border-radius: 5px;
+  height: 64px;
+  width: 256px;
+  margin: 0 auto;
+}
+
+.dropzone:hover {
+  cursor: pointer;
+}
