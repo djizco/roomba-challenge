@@ -17,7 +17,7 @@ export default function StepsTable({ steps }) {
       </thead>
       <tbody>
         {steps.map(({ step, location, action, dirtCollected, totalWallsHit }) => (
-          <tr>
+          <tr key={step}>
             <td>{step}</td>
             <td>{location[0]}, {location[1]}</td>
             <td>{action}</td>
@@ -33,7 +33,7 @@ export default function StepsTable({ steps }) {
 StepsTable.propTypes = {
   steps: PropTypes.arrayOf(PropTypes.shape({
     step: PropTypes.number,
-    location: PropTypes.arrayOf([PropTypes.number]),
+    location: PropTypes.arrayOf(PropTypes.number),
     action: PropTypes.string,
     dirtCollected: PropTypes.number,
     totalWallsHit: PropTypes.number,

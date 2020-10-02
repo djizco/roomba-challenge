@@ -9,7 +9,6 @@ export default function Stats({
   distanceTraveled,
   totalWallsHit,
 }) {
-  console.log('position:', finalPosition);
   return (
     <div className="stats">
       <p>Final Position: {finalPosition[0]}, {finalPosition[1]}</p>
